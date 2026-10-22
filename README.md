@@ -54,19 +54,23 @@ src/
   msalShim.jsx     fake sign-in (demo only)
   authConfig.js    empty placeholder (demo only)
   styles.css       all styling
-.github/workflows/pages.yml   builds and publishes the site
+docs/                         the built site that GitHub Pages serves
 ```
 
 ## Hosting on GitHub Pages
 
-The workflow in `.github/workflows/pages.yml` builds the site and publishes it whenever `main` is updated.
+The `docs` folder holds the built site. To publish it:
 
 1. Open the repository **Settings → Pages**.
-2. Set **Source** to **GitHub Actions**.
-3. Push to `main`, or open **Actions → Deploy demo to GitHub Pages → Run workflow**.
-4. The site appears at `https://<owner>.github.io/<repository>/`.
+2. Set **Source** to **Deploy from a branch**, the branch to `main`, and the folder to `/docs`. Save.
+3. The site appears at `https://<owner>.github.io/<repository>/` after about a minute.
 
-If the first deployment fails with a 404, Pages was not switched on yet. Enable it as above and run the workflow again.
+After changing the app, rebuild and refresh the folder before pushing:
+
+```bash
+npm run build
+rm -rf docs && cp -r dist docs && touch docs/.nojekyll
+```
 
 ## What the full portal adds
 
