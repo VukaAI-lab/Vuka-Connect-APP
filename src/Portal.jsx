@@ -4,7 +4,7 @@ import { makeApi } from './api';
 import Logo from './Logo.jsx';
 
 const IDLE_MS = 15 * 60 * 1000;
-const CATEGORIES = ['All', 'Support', 'People', 'Company'];
+const CATEGORIES = ['All', 'Support', 'People', 'Learn & grow', 'Wellbeing', 'Company'];
 const controls = [
   ['Microsoft Entra ID sign-in', 'The same Microsoft account you already use. No new passwords to remember.'],
   ['Multi-factor authentication', 'Every sign-in is verified with a second step before the portal opens.'],
